@@ -1,0 +1,17 @@
+@media screen and (max-width: 750px) {
+  html {
+    font-size: calc(100vw / 37.5);
+  }
+
+  #sec_kv {
+    background-image: url(./images/head-bg-sp.jpg);
+    background-size: cover;
+    padding-bottom: 3vw;
+  }
+
+  #sec_kv.rvhfm {
+    background-image: url(./images/main_bg_sp.jpg);
+    background-size: 100% auto;
+    height: 160vw;
+  }
+}
