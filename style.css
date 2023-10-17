@@ -1,64 +1,24 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap");
 
-abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
-  border: 0;
-  background: transparent;
-  font-size: 100%;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* font-smoothing: antialiased; */
+html {
+  display: block;
 }
 
+body {
+  display: block;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+
 @media screen and (min-width: 751px), print {
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    font-size: 100%;
-    text-decoration: none;
-    vertical-align: baseline;
-  }
-
-  *, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  a {
-    cursor: pointer;
-  }
-
-  a, area, button, input, label, select, textarea {
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-  }
-
   body {
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -o-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     width: 100%;
     height: 100%;
-  }
-
-  body {
     color: #444444;
     font-size: 1.8rem;
     font-family: 'Noto Sans JP', sans-serif;
@@ -71,44 +31,16 @@ abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite
     vertical-align: top;
   }
 
-  h1 {
+  h1, h2, h3, h4, h5, h6, p {
     font-feature-settings: "palt";
   }
 
-  h2 {
-    font-feature-settings: "palt";
-  }
-
-  :not(.eclinks-modal img) {
-    max-width: 100%;
-    height: auto;
-  }
-
-}
-
-
-img {
-  overflow-clip-margin: content-box;
-  overflow: clip;
-}
-
-body {
-  display: block;
-  margin: 8px;
-}
-
-div {
-  display: block;
-}
-
-
-@media screen and (min-width: 751px), print {
   #container {
     overflow: hidden;
   }
 
   #sec_kv {
-    background: url(./images/head-bg.jpg);
+    background-image: url(../img/sec_kv/head-bg.jpg);
     background-size: 1920px auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,6 +75,7 @@ div {
   .sp-s {
     display: none;
   }
+
 }
 
 
@@ -195,3 +128,5 @@ div {
   filter: drop-shadow(0 0 5px white);
   z-index: 2;
 }
+
+
