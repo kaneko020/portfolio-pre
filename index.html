@@ -340,7 +340,7 @@
               <img src="./images/interest_thumb3.jpg" alt="クナイプ スパークリングタブレットは、タルクフリー・PEGフリー・塩素除去成分配合。" width="470">
             </div>
             <!-- thumb end -->
-            <img src="./images/trust-c-title.png" alt="人にも環境にも配慮したこだわりの処方" class="sp-s ttl">
+            <img src="./images/trust-c-title-sp.png" alt="人にも環境にも配慮したこだわりの処方" class="sp-s ttl">
             <p class="txt">
               SDGsの考えに基づき、<br>人や環境に配慮して開発しています。<br>
               <span>・PEGフリー<br>・タルクフリー<br>・マイクロプラスチックフリー<br>・塩素除去<br>・パラフィン、シリコン、鉱物油不使用</span>
@@ -431,7 +431,7 @@
         <span class="eclinks-btn st">
           <a class="btn1 purchase_lnk" id="sparklingtablet_float" data-target="eclinks-modal0">
             <img src="./images/fix-btn.png" width="232" height="232" alt="オンラインストアへ" class="pc-s">
-            <!-- <img src="./images/fix-btn-sp.png" alt="オンラインストアへ" class="sp-s"> -->
+            <img src="./images/fix-btn-sp.png" alt="オンラインストアへ" class="sp-s">
           </a>
         </span>
       </div>
@@ -450,12 +450,64 @@
             // ターゲットの位置を取得
             const target = elm.getBoundingClientRect().top + scroll;
             // ウィンドウの高さを取得
-            const windowHeight = window.innerHeight;
+            const window_height = window.innerHeight;
             // ターゲットまでスクロールするとactiveを付与
-            if (scroll > target - windowHeight + 100) {
+            if (scroll > target - window_height + 100) {
               elm.classList.add('active');
             }
           });
+        });
+
+        const btn_buy_fix = document.getElementById('btn_buy_fix');
+
+        // ページトップ
+        const page_top = document.getElementById('top');
+
+
+        // スクロール量を取得
+        const scroll = window.pageYOffset;
+        if (scroll > 0) {
+            btn_buy_fix.style.display = 'block';
+            // 1秒かけてopacityを1にする
+            btn_buy_fix.animate([{
+              opacity: 0
+            }, {
+              opacity: 1
+            }], {
+              duration: 500,
+              fill: 'forwards'
+            });
+          } else {
+            btn_buy_fix.style.display = 'none';
+          }
+
+        // スクロールイベントの設定
+        window.addEventListener('scroll', () => {
+          const scroll = window.pageYOffset;
+          if (scroll > 0 && btn_buy_fix.style.display == 'none') {
+            btn_buy_fix.style.display = 'block';
+            // 1秒かけてopacityを1にする
+            btn_buy_fix.animate([{
+              opacity: 0
+            }, {
+              opacity: 1
+            }], {
+              duration: 500,
+              fill: 'forwards'
+            });
+          } else if (scroll == 0 && btn_buy_fix.style.display == 'block') {
+            // 1秒かけてopacityを0にする
+            btn_buy_fix.animate([{
+              opacity: 1
+            }, {
+              opacity: 0
+            }], {
+              duration: 500,
+              fill: 'forwards'
+            }).onfinish = () => {
+              btn_buy_fix.style.display = 'none';
+            };
+          }
         });
       });
     </script>
