@@ -441,18 +441,23 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const scroll_targets = document.querySelectorAll('.scroll_target');
+        let scroll = window.pageYOffset;
 
         scroll_targets.forEach((elm) => {
-          // スクロールイベントの設定
+          scroll = window.pageYOffset;
+          if (scroll > elm.getBoundingClientRect().top + scroll - window.innerHeight + 200) {
+            elm.classList.add('active');
+          }
+
           window.addEventListener('scroll', () => {
             // スクロール量を取得
-            const scroll = window.pageYOffset;
+            scroll = window.pageYOffset;
             // ターゲットの位置を取得
             const target = elm.getBoundingClientRect().top + scroll;
             // ウィンドウの高さを取得
             const window_height = window.innerHeight;
             // ターゲットまでスクロールするとactiveを付与
-            if (scroll > target - window_height + 100) {
+            if (scroll > target - window_height + 150) {
               elm.classList.add('active');
             }
           });
@@ -460,12 +465,8 @@
 
         const btn_buy_fix = document.getElementById('btn_buy_fix');
 
-        // ページトップ
-        const page_top = document.getElementById('top');
-
-
         // スクロール量を取得
-        const scroll = window.pageYOffset;
+        scroll = window.pageYOffset;
         if (scroll > 0) {
             btn_buy_fix.style.display = 'block';
             // 1秒かけてopacityを1にする
@@ -483,7 +484,7 @@
 
         // スクロールイベントの設定
         window.addEventListener('scroll', () => {
-          const scroll = window.pageYOffset;
+          scroll = window.pageYOffset;
           if (scroll > 0 && btn_buy_fix.style.display == 'none') {
             btn_buy_fix.style.display = 'block';
             // 1秒かけてopacityを1にする
