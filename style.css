@@ -35,6 +35,12 @@ ol, ul {
   list-style: none;
 }
 
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
 #container {
   overflow: hidden;
 }
@@ -992,4 +998,161 @@ ol, ul {
 }
 /* sec_footer end */
 
+/* modal */
+#eclinks-bg {
+  display: none;
+}
 
+#eclinks-bg.on {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.eclinks-modal {
+  display: none;
+  position: fixed;
+  left: 193.5px;
+  top: 227.5px;
+  padding: 40px 30px;
+  width: 785px;
+  height: auto;
+  background-color: #eeeeee;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  box-sizing: content-box;
+  text-align: left;
+  z-index: 1000;
+  overflow: auto;
+}
+
+#eclinks-modal0.eclinks-modal {
+  top: 3%;
+  height: 94%;
+}
+
+#eclinks-modal5.eclinks-modal {
+  top: 306px;
+}
+
+.eclinks-modal p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.eclinks {
+  margin: 20px 0 20px 0;
+}
+
+.eclinks .media__img {
+  display: table-cell;
+  box-sizing: border-box;
+  line-height: 0;
+  vertical-align: top;
+}
+
+.eclinks .media__img img {
+  width: 58px;
+  height: 58px;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+}
+
+.eclinks .media__body {
+  display: table-cell;
+  padding-left: 1em;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+ul.list-eclink {
+  margin: 0 0 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul.list-eclink li {
+  float: left;
+  margin: 15px 15px 0 0;
+  border-radius: 3px;
+  width: 145px;
+  height: 42px;
+  font-size: 0;
+}
+
+ul.list-eclink li:nth-child(5n) {
+  margin-right: 0;
+}
+
+.list-eclink li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #dddddd;
+  box-shadow: 0 0 1px 0 #dddddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: auto 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+ul.list-eclink li.btn-amazon a {
+  border: 0 !important;
+  background-color: transparent !important;
+  background-image: url(./images/logo-amazon.png);
+  background-size: 100%;
+}
+
+ul.list-eclink li.btn-loft a {
+  background-image: url(./images/logo-loft.png);
+}
+
+ul.list-eclink li.btn-cocokarafine a {
+  background-image: url(./images/logo-cocokarafine.png);
+}
+
+ul.list-eclink li.btn-lohaco a {
+  background-image: url(./images/logo-lohaco.png);
+}
+
+ul.list-eclink li.btn-tomods a {
+  border: 0 !important;
+  background-color: transparent !important;
+  background-image: url(./images/logo-tomods.png);
+  background-size: 100%;
+}
+
+.eclinks-close {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/icon_close.png);
+  background-color: #888888;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border-radius: 30px;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.eclinks hr {
+  display: block;
+  margin: 20px 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
