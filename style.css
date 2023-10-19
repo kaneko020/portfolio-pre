@@ -88,6 +88,11 @@ hr {
     margin: 0;
     padding: 0;
   }
+
+  .btn1 img {
+    margin: 38px;
+    filter: drop-shadow(0 0 4px #323232);
+  }
 }
 
 /* sec_kv */
@@ -680,7 +685,7 @@ hr {
   background-image: url(./images/drop3.png);
 }
 #sec_lineup .lineup_area#sec_lineup_2 .detal_area .price::after {
-  background-image: url(./images/drop3.png);
+  background-image: url(./images/drop4.png);
 }
 
 #sec_lineup .lineup_area#sec_lineup_hfm .row .thumb .new {

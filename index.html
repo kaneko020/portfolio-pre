@@ -106,7 +106,7 @@
       <div id="sec_interest">
         <div id="sec_interest_1">
           <h2 class="c_ttl pc-s scroll_target">
-            <img src="./images/intro-title.png" width="618" alt="スパークリングワインのような贅沢な炭酸泡に包まれて">
+            <img src="./images/interest-title.png" width="618" alt="スパークリングワインのような贅沢な炭酸泡に包まれて">
           </h2>
           <!-- row -->
           <div class="row scroll_target">
@@ -427,10 +427,10 @@
       <!-- footer end -->
 
       <!-- btn_buy_fix -->
-      <div id="btn_buy_fix" class="fix_online_btn loaded">
+      <div id="btn_buy_fix" class="fix_online_btn loaded" style="display: none;">
         <span class="eclinks-btn st">
           <a class="btn1 purchase_lnk" id="sparklingtablet_float" data-target="eclinks-modal0">
-            <img src="./images/fix-btn.png" width="232" height="232" alt="オンラインストアへ" class="pc-s">
+            <img src="./images/fix-btn.png" width="160" height="160" alt="オンラインストアへ" class="pc-s">
             <img src="./images/fix-btn-sp.png" alt="オンラインストアへ" class="sp-s">
           </a>
         </span>
@@ -863,10 +863,10 @@
         const btn_buy_fix = document.getElementById('btn_buy_fix');
         // スクロール量を取得
         scroll = window.pageYOffset;
-        // トップから離れていたらボタンを表示
-        if (scroll > 0) {
+        
+        if (window.innerWidth > 750) {
+          // pcは常に表示
           btn_buy_fix.style.display = 'block';
-          // 1秒かけてopacityを1にする
           btn_buy_fix.animate([{
             opacity: 0
           }, {
@@ -876,8 +876,23 @@
             fill: 'forwards'
           });
         } else {
-          btn_buy_fix.style.display = 'none';
+          // spはトップから離れていたらボタンを表示
+          if (scroll > 0) {
+            btn_buy_fix.style.display = 'block';
+            // 1秒かけてopacityを1にする
+            btn_buy_fix.animate([{
+              opacity: 0
+            }, {
+              opacity: 1
+            }], {
+              duration: 500,
+              fill: 'forwards'
+            });
+          } else {
+            btn_buy_fix.style.display = 'none';
+          }
         }
+        
 
         // スクロールしてトップから離れたらボタンを表示
         window.addEventListener('scroll', () => {
