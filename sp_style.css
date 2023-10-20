@@ -12,7 +12,7 @@
   }
 
   .eclinks-modal {
-    left: 21.5px;
+    left: calc(50% - 90%/2);
     margin: 0;
     padding: 1.5em 4% 1em 4%;
     width: 90%;
